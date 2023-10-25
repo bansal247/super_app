@@ -1,0 +1,19 @@
+.background{
+    background-image: url('../../../src/assets/banner.png');
+    background-repeat: no-repeat;
+    width: 50vw;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    font-family: Roboto;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 78px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: white;
+}
+.text{
+    padding-left: 3rem;
+    margin-bottom: 3rem;
+}
