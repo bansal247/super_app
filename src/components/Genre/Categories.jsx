@@ -14,7 +14,15 @@ import { useNavigate } from 'react-router-dom'
 import Chips from '../Global/Chips'
 
 let genres = [
-    
+    { id: 'action', image: action, color: '#FF5209' },
+    { id: 'drama', image: drama, color: '#D7A4FF' },
+    { id: 'romance', image: romance, color: '#11B800' },
+    { id: 'thriller', image: thriller, color: '#84C2FF' },
+    { id: 'western', image: western, color: '#902500' },
+    { id: 'horror', image: horror, color: '#7358FF' },
+    { id: 'fantasy', image: fantasy, color: '#FF4ADE' },
+    { id: 'music', image: music, color: '#E61E32' },
+    { id: 'fiction', image: fiction, color: '#6CD061' },
 ]
 
 function Categories() {
@@ -35,74 +43,80 @@ function Categories() {
 
     return (
         <div className={styles.body}>
-            <div className={styles.left}>
-                <p className={styles.heading}>Super app</p>
-                <p className={styles.subHeading}>Choose your entertainment category</p>
-                <div style={{ marginTop: "10vh" }}>
-                    <Chips
-                    categories={categories}
-                    color={"green"}
-                    setCategories={setCategories}
-                    />
-                    {
-                        lengthError?(
-                            <p className={styles.error}>Please Choose atleast 3</p>
-                        ):
-                        (<></>)
-                    }
+            <div className={styles.main}>
+                <div className={styles.left}>
+                    <p className={styles.heading}>Super app</p>
+                    <p className={styles.subHeading}>Choose your entertainment category</p>
+                    <div style={{ marginTop: "5vh" }}>
+                        <Chips
+                            categories={categories}
+                            color={"green"}
+                            setCategories={setCategories}
+                        />
+                        {
+                            lengthError ? (
+                                <p className={styles.error}>Minimum 3 category required</p>
+                            ) :
+                                (<></>)
+                        }
+                    </div>
                 </div>
-            </div>
 
-            <div className={styles.right}>
-                {genres.map((data,idx) => (
-                    <Block 
-                    data = {data}
-                    idx = {idx}
-                    categories = {categories}
-                    setCategories = {setCategories}
-                    />
-                ))}
+                <div className={styles.right}>
+                    {genres.map((data, idx) => (
+                        <Block
+                            data={data}
+                            idx={idx}
+                            key={idx}
+                            categories={categories}
+                            setCategories={setCategories}
+                        />
+                    ))}
+                </div>
             </div>
             <button className={styles.signUp} onClick={handleChoice}>NextPage</button>
         </div>
     )
 }
 
-const Block = ({data,idx,setCategories,categories}) => {
+const Block = ({ data, idx, setCategories, categories }) => {
     const [selected, setSelected] = useState();
     const handleClick = (e) => {
-        if (categories.includes(data.id)){
+        if (categories.includes(data.id)) {
             const index = categories.indexOf(data.id);
-            categories.splice(index,1);
+            categories.splice(index, 1);
             setCategories([...categories]);
         }
-        else{
-            setCategories([...categories,data.id])
+        else {
+            setCategories([...categories, data.id])
         }
         setSelected(!selected)
     };
 
     useEffect(() => {
-      setSelected(categories.includes(data.id) == true);
-    });
+        setSelected(categories.includes(data.id) === true);
+    }, [categories, data.id]);
 
+    const blockStyle = {
+        background: data['color'],
+        borderRadius: '12px',
+        border: `${selected ? '4px solid green' : '4px solid white'}`
+    }
     return (
         <div
-        data = {data}
-        onClick={(e)=>handleClick(e)}
-        key = {idx}
-        style={{
-            background : data['color'],
-            color:'white',
-            padding: '16px',
-            borderRadius: '12px',
-            border: `${selected ? '4px solid green':'4px solid whilte'}`
-        }}
+            
+            onClick={(e) => handleClick(e)}
+            key={idx}
+            style={blockStyle}
+            className={styles.block}
+            
         >
-            <p style={{marginBottom: '4px', fontSize: '18px'}}>{data.id}</p>
+            <p className={styles.blockText} onClick={handleClick}>{data.id}</p>
+            <img className={styles.image} src={data.image} alt={data.id} />
+
         </div>
     );
-    
+
 }
 
 export default Categories
