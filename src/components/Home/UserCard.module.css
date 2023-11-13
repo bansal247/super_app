@@ -1,0 +1,43 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    align-items: center;
+    background: #5746EA;
+    border-radius: 20px;
+    height: 40vh;
+    justify-content: space-evenly;
+}
+
+.left > img{
+    height: 35vh;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 1vh;
+}
+
+.right > p{
+    margin: 0;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: white;
+}
+
+.right > h1{
+    margin: 0;
+    font-family: Roboto;
+    font-size: 41px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #FFFFFF;
+}

@@ -1,0 +1,15 @@
+.main{
+    height: 90vh;
+    width: 30vw;
+    position: relative;
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.top{
+    height: 60vh;
+    width: 30vw;
+    border-radius: 12px;
+}
+
+

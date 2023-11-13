@@ -37,7 +37,7 @@ function Categories() {
         else {
             setLengthError(false);
             window.localStorage.setItem('genres', JSON.stringify({ ...categories }));
-            navigate('/browse');
+            navigate('/home');
         }
     }
 

@@ -13,7 +13,7 @@ function Chips({color,id,setCategories,categories}) {
   return (
     <div className={styles.chips}>
         {categories.map((category)=>(
-            <div className={styles.chip}>{category}<button key={category} onClick={handleClick}>x</button></div>
+            <div key={category} className={styles.chip}>{category}<button  onClick={handleClick}>x</button></div>
             
         ))}
     </div>
