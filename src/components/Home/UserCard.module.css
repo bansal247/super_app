@@ -5,12 +5,12 @@
     align-items: center;
     background: #5746EA;
     border-radius: 20px;
-    height: 40vh;
+    height: 37vh;
     justify-content: space-evenly;
 }
 
 .left > img{
-    height: 35vh;
+    height: 32vh;
 }
 
 .right{

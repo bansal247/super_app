@@ -22,27 +22,29 @@ function WeatherCard() {
   return (
     <div className={styles.main}>
       {weatherData ? <div className={styles.top}>
-        <p>{weatherData['location']['localtime']}</p>
-        <p>{weatherData['location']['localtime']}</p>
+        <p>{weatherData['location']['localtime'].split(" ")[0]}</p>
+        <p>{weatherData['location']['localtime'].split(" ")[1]}</p>
       </div>:<></>}
       {weatherData ? <div className={styles.bottom}>
-        <div className={`${styles.item}`}>
-          <img src={'http:' + weatherData['current']['condition']['icon']} alt="weatherData['current']['condition']['text']" />
+        <div className={`${styles.itemLeft}`}>
+          <img className={styles.weather} src={'http:' + weatherData['current']['condition']['icon']} alt="weatherData['current']['condition']['text']" />
           <p className={styles.text}>{weatherData['current']['condition']['text']}</p>
         </div>
+        <div className={styles.break}>|</div>
         <div className={`${styles.item}`}>
           <p className={styles.bigText}>{weatherData['current']['temp_c']} °C</p>
           <div className={styles.textBlock}>
             <img src={tempIcon} alt="pressure"/>
-            <p className={styles.text}>{weatherData['current']['pressure_mb']} mbar Pressure</p>
+            <p className={styles.text}>{weatherData['current']['pressure_mb']} mbar <br /> Pressure</p>
           </div>
         </div>
-        <div className={`${styles.item}`}>
+        <div className={styles.break}>|</div>
+        <div className={`${styles.itemRight}`}>
           <div className={styles.textBlock}>
             <img src={windIcon} alt="wind-speed" />
-            <p className={styles.text}>{weatherData['current']['wind_kph']} km/h Wind</p>
+            <p className={styles.text}>{weatherData['current']['wind_kph']} km/h <br /> Wind</p>
           </div>
-          <div className={styles.textBlock}>
+          <div className={styles.textBlockHumidity}>
             <img src={humidityIcon} alt="humidity" />
             <p className={styles.text}>{weatherData['current']['humidity']} Humidity</p>
           </div>

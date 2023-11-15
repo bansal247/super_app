@@ -75,22 +75,22 @@ function Browse() {
         <h1 className={styles.title}>Super app</h1>
         <img src={UserImage} alt="User" />
       </div>
-    <div className={styles.mainContent}>
-      <p>Entertainment according to your choice</p>
-    <div className={styles.movies}>
-      {categoriesData ? categoriesData.map((data) => (
-        <div key={data['category']}>
-          
-          <div className={styles.genre}>{data['category']}</div>
-          <div className={styles.images}>
-            {data['images'].map((image,index)=>(
-              <img className={styles.image} key={index} src={image} alt=""  />
-            ))}
-          </div>
+      <div className={styles.mainContent}>
+        <p>Entertainment according to your choice</p>
+        <div className={styles.movies}>
+          {categoriesData ? categoriesData.map((data) => (
+            <div key={data['category']}>
+
+              <div className={styles.genre}>{data['category']}</div>
+              <div className={styles.images}>
+                {data['images'].map((image, index) => (
+                  <img className={styles.image} key={index} src={image} alt="" />
+                ))}
+              </div>
+            </div>
+          )) : <></>}
         </div>
-      )) : <></>}
-    </div>
-    </div>
+      </div>
     </div>
   )
 }

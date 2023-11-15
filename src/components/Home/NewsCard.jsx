@@ -16,7 +16,7 @@ function NewsCard() {
           setImageUrl(res['articles'][0]["urlToImage"].replace('"', ''));
         }
         )
-        
+
     }
     fetchNewsData();
 
@@ -26,11 +26,14 @@ function NewsCard() {
   return (
     <>
       {newsData ? <div className={styles.main}>
-          <img src={imageUrl} alt=""  className={styles.top}/>
+
+        <div className={styles.titleContent}>
           <div className={styles.title}>{newsData['title']}</div>
           <div className={styles.dateTime}>2-20-2023 | 07:35 PM</div>
+        </div>
+        <img src={imageUrl} alt="" className={styles.top} />
         <div className={styles.bottom}>
-          {newsData['content']}
+          <div className={styles.text}>{newsData['description']}</div>
         </div>
       </div> : <></>}
     </>

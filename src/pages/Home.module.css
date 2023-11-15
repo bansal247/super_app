@@ -1,0 +1,52 @@
+.main{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3em;
+}
+
+.content{
+    display: grid;
+}
+
+
+.signUp {
+    font-family: DM Sans;
+    font-size: 1.3vw;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    background: #148A08;
+    border-radius: 38px;
+    width: 9vw;
+    height: 7vh;
+    color: white;
+    align-self: flex-end;
+    margin-right: 10vw;
+    margin: 20px;
+}
+
+.content{
+    display: flex;
+    gap: 2em;
+}
+
+.timer{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.notes{
+    display: flex;
+    gap: 2em;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}

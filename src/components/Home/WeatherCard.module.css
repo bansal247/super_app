@@ -1,0 +1,121 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 35vw;
+    align-items: center;
+    border: 0.78px solid #FFFFFF;
+    border-radius: 19px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    height: 35vh;
+    overflow: hidden;
+}
+
+.top{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #FF4ADE;
+    width: 100%;
+    border-radius: 19px 19px 0px 0px;
+    font-family: Roboto;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: .5em;
+    letter-spacing: 0.02em;
+    text-align: left;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 25%;
+}
+
+.bigText{
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 400;
+    /* line-height: .5em; */
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+    
+}
+
+.bottom{
+    display: flex;
+    /* margin: 30px 0px; */
+    background: #101744;
+    width: 100%;
+    border-radius: 0px 0px 19px 19px;
+    justify-content: space-evenly;
+    /* padding: 10px 0px; */
+    height: 75%;
+    align-items: center;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.itemLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemRight{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    gap: 30px;
+}
+
+.itemLeft > p{
+    margin-top: 20px;
+}
+
+.textBlock{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    margin: 0;
+}
+
+.textBlock > img{
+    height: 20px;
+}
+
+.weather{
+    height: 80px;
+}
+
+.textBlockHumidity{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 5px; */
+}
+
+.break{
+    align-self: center;
+    font-size: 40px;
+    margin: 0px 5px;
+}

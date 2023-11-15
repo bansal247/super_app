@@ -6,11 +6,14 @@ function NotesCard() {
   const [note, setNote] = useState('')
   const handleChange = (e) => {
     setNote(e.target.value)
+    window.localStorage.setItem('notes',JSON.stringify(note))
 }
 
 useEffect(() => {
-  window.localStorage.setItem('notes',JSON.stringify(note))
-}, [note])
+  setNote(JSON.parse(window.localStorage['notes']))
+}, [])
+
+
 
   return (
     <div className={styles.main}>
