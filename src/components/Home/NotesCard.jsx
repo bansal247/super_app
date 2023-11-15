@@ -9,9 +9,6 @@ function NotesCard() {
     window.localStorage.setItem('notes',JSON.stringify(note))
 }
 
-useEffect(() => {
-  setNote(JSON.parse(window.localStorage['notes']))
-}, [])
 
 
 
