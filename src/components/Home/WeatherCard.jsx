@@ -10,7 +10,7 @@ function WeatherCard() {
   const [weatherData, setWeatherData] = useState()
   useEffect(() => {
     const fetchWeatherData = async () => {
-      await fetch("http://api.weatherapi.com/v1/current.json?key=04b4d35e4efa49c0abe113154233010&q=auto:ip&aqi=no")
+      await fetch("http://api.weatherapi.com/v1/current.json?key=987de39fe8924052ada80850232502&q=London&aqi=no")
         .then(async (data) => await data.json())
         .then((res) => setWeatherData(res))
         .catch(err => console.error(err))
