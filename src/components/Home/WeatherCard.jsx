@@ -13,10 +13,11 @@ function WeatherCard() {
       await fetch("http://api.weatherapi.com/v1/current.json?key=04b4d35e4efa49c0abe113154233010&q=auto:ip&aqi=no")
         .then(async (data) => await data.json())
         .then((res) => setWeatherData(res))
+        .catch(err => console.error(err))
     }
     fetchWeatherData();
   },[])
-  console.log(weatherData)
+  // console.log(weatherData)
   // ['location']['localtime'] ['current']['condition']['text'] ['current']['condition']['icon']
   // ['current']['humidity'] ['current']['temp_c'] ['current']['wind_kph'] ['current']['pressure_mb']
   return (
